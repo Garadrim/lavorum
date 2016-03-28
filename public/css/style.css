@@ -1,0 +1,194 @@
+/*
+283d59		40 61 89
+1c2c40		28 44 64
+f2dec4		242 222 196
+bfae99		191 174 153
+8c7672		140 118 114
+*/
+/*
+		RESET
+*/
+* {
+  padding: 0px;
+  margin: 0px;
+  border-spacing: 0px;
+  box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%; }
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+/*
+		HEADER & FOOTER
+*/
+#header {
+  z-index: 10;
+  transition: box-shadow 500ms; }
+
+#header.shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+
+#footer {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  overflow: hidden; }
+
+#footer_me {
+  position: relative;
+  z-index: 3;
+  line-height: 60px; }
+
+#footer_year {
+  position: absolute;
+  z-index: 2;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 5em;
+  opacity: 0.2; }
+
+section {
+  width: 100%;
+  min-height: 100%; }
+
+#content {
+  padding-bottom: 60px; }
+
+.table,
+.table2,
+.table2b {
+  display: table;
+  width: 100%; }
+
+.table > div,
+.table2 > div,
+.table2b > div,
+.table3 > div {
+  display: table-cell;
+  vertical-align: middle; }
+
+.table2 > div:first-child,
+.table2b > div:first-child,
+.table3 > div:first-child {
+  text-align: left; }
+
+.table2 > div:last-child,
+.table2b > div:last-child,
+.table3 > div:last-child {
+  white-space: nowrap; }
+
+.table > div + div {
+  border-left: 10px solid transparent; }
+
+.table > div:first-child {
+  width: 100px;
+  text-align: center; }
+
+.table2 > div:last-child {
+  text-align: right;
+  width: 140px; }
+
+.table2 > div:nth-of-type(2):not(:last-child) {
+  width: 60px;
+  padding: 0 10px;
+  text-align: right; }
+
+.table2b > div:first-child {
+  width: 100px; }
+
+.table2b > div:last-child {
+  width: 140px;
+  text-align: right; }
+
+.table3 {
+  display: table;
+  border-spacing: 0 5px; }
+  .table3 td {
+    padding: 5px 10px; }
+  .table3 div:first-child {
+    min-width: 100px; }
+
+.alpha {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%; }
+
+.error {
+  padding: 20px 0; }
+
+.paginator {
+  text-align: center; }
+
+/*
+		BOOTSTRAP RESETS
+*/
+p, h1, h2, h3, h4 {
+  margin: 0; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
+
+ul, li {
+  list-style: none; }
+
+ul {
+  margin: 0; }
+
+li:last-child .list-group {
+  margin: 0; }
+
+.alert-danger {
+  background-color: #cd4237;
+  border-color: #cd4237; }
+
+textarea {
+  resize: none; }
+
+/*
+		NAV
+*/
+.navbar > .container-fluid .navbar-brand {
+  text-transform: uppercase; }
+
+/*
+		STUFF
+*/
+.comment {
+  margin-top: 100px;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4); }
+
+.comment > *:not(:last-child) {
+  margin-bottom: 15px; }
+
+.comment + .comment {
+  margin-top: 20px; }
+
+.textarea {
+  min-height: 300px; }
+
+.mce-menubar {
+  display: none !important; }
+
+@media screen and (max-width: 500px) {
+  .table {
+    display: block; }
+    .table > div {
+      display: block; }
+    .table > div:first-child {
+      display: none; } }

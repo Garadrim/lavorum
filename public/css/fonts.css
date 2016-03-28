@@ -1,0 +1,118 @@
+
+@font-face
+{
+	font-family:alex;
+	src:url('../fonts/folder/AlexBrush-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:josefin;
+	src:url('../fonts/folder/JosefinSans-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:'open sans';
+	src:url('../fonts/folder/OpenSans-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:oxygen;
+	src:url('../fonts/folder/Oxygen-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:daniel;
+	src:url('../fonts/folder/Daniel.ttf');
+}
+
+@font-face
+{
+	font-family:journal;
+	src:url('../fonts/folder/Journal.ttf');
+}
+
+@font-face
+{
+	font-family:league;
+	src:url('../fonts/folder/LeagueGothic-Regular.otf');
+}
+
+@font-face
+{
+	font-family:sansation;
+	src:url('../fonts/folder/Sansation-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:titillium;
+	src:url('../fonts/folder/Titillium-Regular.otf');
+}
+
+@font-face
+{
+	font-family:bebas;
+	src:url('../fonts/folder/BebasNeue.otf');
+}
+
+@font-face
+{
+	font-family:ubuntu;
+	src:url('../fonts/folder/Ubuntu-Regular.ttf');
+}
+
+@font-face
+{
+	font-family:zig;
+	src:url('../fonts/folder/Zig.ttf');
+}
+
+@font-face
+{
+	font-family:lato;
+	src:url('../fonts/folder/Lato-Regular.ttf');
+	font-weight:normal;
+}
+@font-face
+{
+	font-family:lato;
+	src:url('../fonts/folder/Lato-Bold.ttf');
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:lato;
+	src:url('../fonts/folder/Lato-Thin.ttf');
+	font-weight:100;
+}
+
+@font-face
+{
+	font-family:roboto;
+	src:url('../fonts/folder/Roboto-Regular.ttf');
+	font-weight:normal;
+}
+@font-face
+{
+	font-family:roboto;
+	src:url('../fonts/folder/Roboto-Bold.ttf');
+	font-weight:bold;
+}
+@font-face
+{
+	font-family:roboto;
+	src:url('../fonts/folder/Roboto-Thin.ttf');
+	font-weight:100;
+}
+
+/*
+@font-face
+{
+	font-family:;
+	src:url('../fonts/folder/');
+}
+*/
