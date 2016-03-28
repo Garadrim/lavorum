@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,7 +63,7 @@
 				<div class="collapse navbar-collapse" id="app-navbar-collapse">
 					<!-- Left Side Of Navbar -->
 					<ul class="nav navbar-nav">
-						<li><a href="{{ url('/home') }}">Home</a></li>
+						<li class="@yield('active_home')"><a href="{{ url('/home') }}">Home</a></li>
 					</ul>
 
 					<!-- Right Side Of Navbar -->
@@ -74,9 +74,7 @@
 						<li><a href="{{ url('/register') }}">Register</a></li>
 						@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							{{ Auth::user()->username }} <span class="caret"></span>
-							</a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->username }} <span class="caret"></span></a>
 
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
@@ -100,13 +98,16 @@
 
 		<footer class="footer">
 			<div class="container">
-				<div class="text-muted">fredrik<b>sevesten</b>1997-2016</div>
+				<div>
+					<span id="footer_me"></span><span id="footer_year" class="text-muted"></span>
+				</div>
 			</div>
 		</footer>
 
 		<!-- JavaScripts -->
 		<script type="text/javascript" src="{{ asset('/js/jquery-2_1_1.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
+		<script type="text/javascript" src="{{ asset('/js/script.js') }}"></script>
 		{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 	</body>
 </html>

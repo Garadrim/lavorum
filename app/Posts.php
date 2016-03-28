@@ -11,7 +11,7 @@
 		
 		// Return all comments on post
 		public function comments() {
-			return $this->hasMany('App\Comments', 'post_id')->orderBy('created_at', 'desc');
+			return $this->hasMany('App\Comments', 'post_id');
 		}
 
 		// Return user who is author of post

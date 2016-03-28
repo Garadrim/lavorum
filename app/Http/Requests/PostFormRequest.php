@@ -26,7 +26,7 @@
     */
     public function rules() {
       return [
-        'title' => 'required|unique:posts|max:255',
+        'title' => 'required|unique:posts|max:100',
         'title' => array('Regex:/^[A-Za-z0-9 ]+$/'),
         'content' => 'required',
       ];

@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	
-	setPadding();
-	checkHeader();
+	if (document.getElementById("lavorum")){
+		setPadding();
+		shadowHeader();
+	}
 	attentionMe();
 	
-	$("textarea").autoResize();
-
 });
 
 function setPadding(){
@@ -16,9 +16,9 @@ function setPadding(){
 			paddingTop: headerHeight
 	});
 }
-function checkHeader(){
-	if ($("#header")){
-		var scrolledTop = $("#header").offset().top;
+function shadowHeader(){
+	if (document.getElementById("header")){
+		var scrolledTop = 0 //$("#header").offset().top;
 		$(window).bind("scroll", function(){
 			var scrolled = $(window).scrollTop();
 			if (scrolled > scrolledTop){
@@ -33,6 +33,6 @@ function checkHeader(){
 function attentionMe(){
 	var meTime = new Date();
 	var meYear = meTime.getFullYear();
-	$("#footer_me").html("©<b>SEVESTEN</b>");
+	$("#footer_me").html("fredrik<b>sevesten</b>");
 	$("#footer_year").html("1997-" + meYear);
 }

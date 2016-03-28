@@ -31,12 +31,12 @@
 
 		// Posts from author
 		public function posts() {
-			return $this->hasMany('App\Posts','user_id');
+			return $this->hasMany('App\Posts','user_id')->orderBy('created_at', 'desc');
 		}
 
 		// Comments from users
 		public function comments() {
-			return $this->hasMany('App\Comments','user_id');
+			return $this->hasMany('App\Comments','user_id')->orderBy('created_at', 'desc');
 		}
 
 		// Check role of user

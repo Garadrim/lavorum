@@ -34,7 +34,7 @@ button::-moz-focus-inner {
 		HEADER & FOOTER
 */
 #header {
-  z-index: 10;
+  z-index: 100;
   transition: box-shadow 500ms; }
 
 #header.shadow {
@@ -59,6 +59,10 @@ button::-moz-focus-inner {
   transform: translateY(-50%);
   font-size: 5em;
   opacity: 0.2; }
+
+#footer .jumbotron {
+  padding: 0;
+  margin: 0; }
 
 section {
   width: 100%;
@@ -90,21 +94,13 @@ section {
 .table3 > div:last-child {
   white-space: nowrap; }
 
-.table > div + div {
-  border-left: 10px solid transparent; }
-
-.table > div:first-child {
-  width: 100px;
-  text-align: center; }
+.table2 > div:nth-of-type(2) {
+  max-width: 80px;
+  text-align: right; }
 
 .table2 > div:last-child {
   text-align: right;
   width: 140px; }
-
-.table2 > div:nth-of-type(2):not(:last-child) {
-  width: 60px;
-  padding: 0 10px;
-  text-align: right; }
 
 .table2b > div:first-child {
   width: 100px; }
@@ -184,6 +180,17 @@ textarea {
 
 .mce-menubar {
   display: none !important; }
+
+.carousel .img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 160px; }
+
+.text-left {
+  text-align: left;
+  left: 0;
+  right: 0; }
 
 @media screen and (max-width: 500px) {
   .table {

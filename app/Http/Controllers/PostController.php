@@ -2,7 +2,6 @@
 
 	namespace App\Http\Controllers;
 
-	//use DB;
 	use Redirect;
 	use App\Posts;
 	use App\User;
@@ -103,7 +102,7 @@
 				else {
 					$post->active = 1;
 					$message = 'Post updated successfully';
-					$landing = '/lavorum/view/'.$post->slug;
+					$landing = '/lavorum/show/'.$post->slug;
 				}
 				$post->save();
 				return redirect($landing)->withMessage($message);

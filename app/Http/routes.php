@@ -55,7 +55,7 @@ Route::group(['middleware' => 'web'], function () {
 
 	// POSTS
 	// Display single post
-	Route::get('lavorum/view/{slug}', 'PostController@show')->where('slug', '[A-Za-z0-9-_]+');
+	Route::get('lavorum/show/{slug}', 'PostController@show')->where('slug', '[A-Za-z0-9-_]+');
 	// Show new post form
 	Route::get('lavorum/post/create', 'PostController@create');
 	// Save new post
@@ -71,7 +71,7 @@ Route::group(['middleware' => 'web'], function () {
 	// Add comment
 	Route::post('lavorum/comment/add', 'CommentController@store');
 	// Delete comment
-	Route::post('lavorum/comment/delete/{id}', 'CommentController@delete_this');
+	Route::get('lavorum/comment/delete/{id}', 'CommentController@delete_this');
 
 
 	/*

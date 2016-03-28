@@ -1,114 +1,122 @@
 
-@font-face
-{
-	font-family:alex;
+@font-face {
+	font-family:'Alex';
 	src:url('../fonts/folder/AlexBrush-Regular.ttf');
 }
 
-@font-face
-{
-	font-family:josefin;
+@font-face {
+	font-family:'Josefin';
 	src:url('../fonts/folder/JosefinSans-Regular.ttf');
 }
 
-@font-face
-{
-	font-family:'open sans';
-	src:url('../fonts/folder/OpenSans-Regular.ttf');
-}
-
-@font-face
-{
-	font-family:oxygen;
+@font-face {
+	font-family:'Oxygen';
 	src:url('../fonts/folder/Oxygen-Regular.ttf');
 }
 
-@font-face
-{
-	font-family:daniel;
+@font-face {
+	font-family:'Daniel';
 	src:url('../fonts/folder/Daniel.ttf');
 }
 
-@font-face
-{
-	font-family:journal;
+@font-face {
+	font-family:'Journal';
 	src:url('../fonts/folder/Journal.ttf');
 }
 
-@font-face
-{
-	font-family:league;
+@font-face {
+	font-family:'League';
 	src:url('../fonts/folder/LeagueGothic-Regular.otf');
 }
 
-@font-face
-{
-	font-family:sansation;
+@font-face {
+	font-family:'Sansation';
 	src:url('../fonts/folder/Sansation-Regular.ttf');
 }
 
-@font-face
-{
-	font-family:titillium;
+@font-face {
+	font-family:'Titillium';
 	src:url('../fonts/folder/Titillium-Regular.otf');
 }
 
-@font-face
-{
-	font-family:bebas;
+@font-face {
+	font-family:'Bebas';
 	src:url('../fonts/folder/BebasNeue.otf');
 }
 
-@font-face
-{
-	font-family:ubuntu;
+@font-face {
+	font-family:'Ubuntu';
 	src:url('../fonts/folder/Ubuntu-Regular.ttf');
 }
 
-@font-face
-{
-	font-family:zig;
+@font-face {
+	font-family:'Zig';
 	src:url('../fonts/folder/Zig.ttf');
 }
 
-@font-face
-{
-	font-family:lato;
+@font-face {
+	font-family:'Lato';
 	src:url('../fonts/folder/Lato-Regular.ttf');
 	font-weight:normal;
 }
-@font-face
-{
-	font-family:lato;
+@font-face {
+	font-family:'Lato';
 	src:url('../fonts/folder/Lato-Bold.ttf');
 	font-weight:bold;
 }
-@font-face
-{
-	font-family:lato;
+@font-face {
+	font-family:'Lato';
 	src:url('../fonts/folder/Lato-Thin.ttf');
 	font-weight:100;
 }
 
-@font-face
-{
-	font-family:roboto;
+@font-face {
+	font-family:'Roboto';
 	src:url('../fonts/folder/Roboto-Regular.ttf');
 	font-weight:normal;
 }
-@font-face
-{
-	font-family:roboto;
+@font-face {
+	font-family:'Roboto';
 	src:url('../fonts/folder/Roboto-Bold.ttf');
 	font-weight:bold;
 }
-@font-face
-{
-	font-family:roboto;
-	src:url('../fonts/folder/Roboto-Thin.ttf');
+@font-face {
+	font-family:'Roboto';
+	src:url('../fonts/folder/Roboto-Light.ttf');
 	font-weight:100;
 }
 
+@font-face {
+	font-family:'Open Sans';
+	src:url('../fonts/folder/OpenSans-Regular.ttf');
+	font-weight:normal;
+}
+@font-face {
+	font-family:'Open Sans';
+	src:url('../fonts/folder/OpenSans-Bold.ttf');
+	font-weight:bold;
+}
+@font-face {
+	font-family:'Open Sans';
+	src:url('../fonts/folder/OpenSans-Light.ttf');
+	font-weight:100;
+}
+
+@font-face {
+	font-family:'Source Sans Pro';
+	src:url('../fonts/folder/SourceSansPro-Regular.ttf');
+	font-weight:normal;
+}
+@font-face {
+	font-family:'Source Sans Pro';
+	src:url('../fonts/folder/SourceSansPro-Bold.ttf');
+	font-weight:bold;
+}
+@font-face {
+	font-family:'Source Sans Pro';
+	src:url('../fonts/folder/SourceSansPro-Light.ttf');
+	font-weight:100;
+}
 /*
 @font-face
 {

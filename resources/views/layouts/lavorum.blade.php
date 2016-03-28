@@ -8,14 +8,14 @@
 		<meta name="description" content="Made by Fredrik">
 		<meta name="author" content="Fredrik" />
 		<title>@yield('title') | Lavorum</title>
-		<link rel="stylesheet" href="{{ asset('/css/bootstrap-slate.css') }}">
+		<link rel="stylesheet" href="{{ asset('/css/bootstrap-cosmo.css') }}">
 		<link rel="stylesheet" href="{{ asset('/css/font-awesome.css') }}">
 		<link rel="stylesheet" href="{{ asset('/css/fonts.css') }}">
 		<link rel="stylesheet" href="{{ asset('/css/style.css') }}">
 	</head>
-	<body>
+	<body id="lavorum">
 
-		<nav class="navbar navbar-default navbar-fixed-top" id="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -38,7 +38,7 @@
 							</li>
 						@else
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->username }} <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									@if (Auth::user()->can_post())
 										<li>
@@ -107,8 +107,8 @@
 		</section>
 
 		<footer class="footer" id="footer">
-			<div class="container-fluid text-muted">
-				<div class="footer-wrapper">
+			<div class="jumbotron">
+				<div class="container-fluid">
 					<div id="footer_me"></div>
 					<div id="footer_year"></div>
 				</div>

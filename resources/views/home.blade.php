@@ -1,8 +1,12 @@
 @extends('layouts.app')
 
-@section('title','Home')
+@section('active_home', 'active')
+
+@section('title')
+{{ Auth::user()->username }}
+@endsection
 @section('title-meta')
-<span>You are logged in!</span>
+<div>You are logged in!</div>
 @endsection
 
 @section('content')
