@@ -12,13 +12,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email', 200)->unique();
-            $table->string('username', 30);
-            $table->string('password', 60);
-            $table->enum('role',['admin','author','subscriber'])->default('author');
-            $table->rememberToken();
+            $table->integer('user_id', 8);
+            $table->string('title', 100);
+            $table->text('content');
+            $table->string('slug', 100);
+            $table->tinyInteger('active', 1);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('posts');
     }
 }
