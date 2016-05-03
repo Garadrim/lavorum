@@ -43,15 +43,26 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('lavorum','PostController@index');
 
 	// USER
-	// User profile
-	Route::get('lavorum/user/{id}', 'UserController@profile')->where('id', '[0-9]+');
-	// Display list of posts
-	Route::get('lavorum/user/{id}/posts', 'UserController@posts')->where('id', '[0-9]+');
 	// Display all of a users posts
-	Route::get('lavorum/user/all', 'UserController@allposts');
+	Route::get('lavorum/user/all-posts', 'UserController@allposts');
 	// Display all of a users drafts
 	Route::get('lavorum/user/drafts', 'UserController@drafts');
+	// Display user profile
+	//Route::get('lavorum/user/{id}', 'UserController@profile')->where('id', '[0-9]+');
+	Route::get('lavorum/user/{username}', 'UserController@profile')->where('username', '[A-Za-z0-9-_]+');
+	// Display list of posts
+	//Route::get('lavorum/user/{id}/posts', 'UserController@posts')->where('id', '[0-9]+');
+	Route::get('lavorum/user/{username}/posts', 'UserController@posts')->where('username', '[A-Za-z0-9-_]+');
 	
+	// THREADS
+	// Display single thread
+	Route::get('lavorum/thread/{slug}', 'ThreadController@show')->where('slug', '[A-Za-z0-9-_]+');
+	// Create thread
+	Route::get('lavorum/thread/create', 'ThreadController@create');
+	// Edit thread
+	Route::get('lavorum/thread/edit/{slug}', 'ThreadController@edit');
+	// Delete thread
+	Route::get('lavorum/thread/delete/{id}', 'ThreadController@delete_this');
 
 	// POSTS
 	// Display single post
@@ -70,6 +81,10 @@ Route::group(['middleware' => 'web'], function () {
 	// COMMENTS
 	// Add comment
 	Route::post('lavorum/comment/add', 'CommentController@store');
+	// Edit comment
+	Route::get('lavorum/comment/edit/{id}', 'CommentController@edit');
+	// Update comment
+	Route::post('lavorum/comment/update/{id}', 'CommentController@update');
 	// Delete comment
 	Route::get('lavorum/comment/delete/{id}', 'CommentController@delete_this');
 
@@ -86,7 +101,4 @@ Route::group(['middleware' => 'web'], function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
-	/*
-			Lavorum Project
-	*/
 });

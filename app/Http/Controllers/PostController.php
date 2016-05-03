@@ -14,9 +14,10 @@
 		
 		// Get the 5 latest posts that are active
 		public function index() {
-			$posts = Posts::where('active', 1)->orderBy('created_at', 'desc')->paginate(5);
-			// Page heading
-			return view('lavorum.index')->withPosts($posts);
+			$posts = Posts::where('active', 1)->orderBy('created_at', 'desc')->paginate(10);
+			$title = "Welcome!";
+			$meta = "Latest posts";
+			return view('lavorum.index')->withPosts($posts)->withTitle($title)->withMeta($meta);
 		}
 
 
@@ -27,7 +28,7 @@
 				return view('lavorum/post.create');
 			}
 			else {
-				return redirect('/lavorum.index')->withErrors('You are not allowed to create a post');
+				return redirect('/lavorum.index')->withErrors('You are not allowed to do that');
 			}
 		}
 
@@ -37,9 +38,9 @@
 			$post = new Posts();
 			$post->title = $request->get('title');
 			$post->content = $request->get('content');
-			$post->slug = str_slug($post->title);
 			$post->user_id = $request->user()->id;
-			if($request->has('save')) {
+			$post->slug = str_slug($post->title);
+			if ($request->has('save')) {
 				$post->active = 0;
 				$message = 'Post saved successfully';
 			}
@@ -48,8 +49,15 @@
 				$message = 'Post published successfully';
 			}
 
+			$duplicate = Posts::where('slug', $post->slug)->first();
+			if ($duplicate) {
+				if($duplicate->slug == $post->slug) {
+					return redirect('/lavorum/post/create/')->withErrors('Title already exists')->withInput();
+				}
+			}
+
 			$post->save();
-			return redirect('/lavorum/post/edit/'.$post->slug)->withMessage($message);
+			return redirect('/lavorum/show/'.$post->slug)->withMessage($message);
 		}
 
 
@@ -80,13 +88,18 @@
 			$post = Posts::find($post_id);
 			if ($post && ($post->user_id == $request->user()->id || $request->user()->is_admin())) {
 				$title = $request->input('title');
+				// Make a slug title
 				$slug = str_slug($title);
+				// Look if this slug exists
 				$duplicate = Posts::where('slug', $slug)->first();
+				// If it already exists
 				if($duplicate) {
 					if($duplicate->id != $post_id) {
+						// Denied
 						return redirect('/lavorum/post/edit/'.$post->slug)->withErrors('Title already exists')->withInput();
 					}
 					else {
+						// Approved
 						$post->slug = $slug;
 					}
 				}
@@ -94,7 +107,7 @@
 				$post->title = $title;
 				$post->content = $request->input('content');
 				
-				if($request->has('save')){
+				if ($request->has('save')){
 					$post->active = 0;
 					$message = 'Post saved successfully';
 					$landing = '/lavorum/post/edit/'.$post->slug;

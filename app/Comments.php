@@ -14,9 +14,10 @@
 			return $this->belongsTo('App\User', 'user_id');
 		}
 		
-		// Return post of comment
+		// Return comments of post
 		public function post() {
 			return $this->belongsTo('App\Posts', 'post_id');
 		}
+
 	}
 
