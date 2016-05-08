@@ -5,11 +5,13 @@
 @section('title')
 {{ Auth::user()->username }}
 @endsection
-@section('title-meta')
-<div>You are logged in!</div>
-@endsection
 
 @section('content')
+<div class="jumbotron">
+    <div class="container">
+        <h1>@yield('title')</h1>
+    </div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -22,4 +24,12 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('script')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#home").addClass("active");
+    });
+</script>
 @endsection

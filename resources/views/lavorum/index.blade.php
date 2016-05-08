@@ -1,39 +1,51 @@
 @extends('layouts.lavorum')
 
-@section('title', 'Lavorum')
+@section('title')
+{{ $title }}
+@endsection
 
 @section('title-meta')
-<div>A forum. For you, by me.</div>
+{{ $meta }}
 @endsection
 
 @section('content')
 @if ($posts->count() < 1)
-	<div>There is no post till now. Login and write a new post now!</div>
+	<div><h2><span class="text-muted">No posts?</span> Login and write one!</h2></div>
 @else
-	<div>
+	<table class="table table-hover table-posts">
+		<thead>
+			<tr>
+				<th class="post">Post</th>
+				<th class="reply">Reply</th>
+				<th class="author">Author</th>
+				<th class="date">Date</th>
+			</tr>
+		</thead>
+		<tbody>
 		@foreach ($posts as $post)
-			<div class="list-group">
-				<div class="table">
+			<tr>
+				<td class="post">
 					<div>
-						<div class="list-group-item">
-							<div class="table2">
-								<div>
-									<div>
-										<b><a href="{{ url('/lavorum/show/'.$post->slug) }}">{{ str_limit($post->title, $limit = 100, $end = '...') }}</a></b>
-									</div>
-								</div>
-								<div>
-									<a href="{{ url('/lavorum/user/'.$post->user_id)}}">{{ $post->author->username }}</a>
-								</div>
-								<div>
-									<span>{{ $post->created_at }}</span>
-								</div>
-							</div>
-						</div>
+						<b><a href="{{ url('/lavorum/show/'.$post->slug) }}">{{ str_limit($post->title, $limit = 100, $end = '...') }}</a></b>
 					</div>
-				</div>
-			</div>
+				</td>
+				<td class="reply">
+					@if ($post->comments->count() > 0)
+						<span class="text-muted">{{ $post->comments->count() }}</span>
+					@endif
+				</td>
+				<td class="author">
+					<a href="{{ url('/lavorum/user/'.$post->author->username)}}">{{ $post->author->username }}</a>
+				</td>
+				<td class="date">
+					<span>{{ $post->created_at }}</span>
+				</td>
+			</tr>
 		@endforeach
+		</tbody>
+	</table>
+
+	<div>
 		<div class="paginator">
 			{!! $posts->render() !!}
 		</div>

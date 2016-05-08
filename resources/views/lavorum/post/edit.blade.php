@@ -2,7 +2,7 @@
 
 @section('title', 'Edit post')
 
-@section('navbar-extra')
+@section('navbar-left')
 <ul class="nav navbar-nav">
 	<li class="active">
 		<a href="{{ url('/lavorum/show/'.$post->slug) }}">{{ str_limit($post->title, $limit = 20, $end = '...') }}</a>
@@ -21,18 +21,20 @@
 		<input type="text" name="title" class="form-control" placeholder="Enter title here" maxlength="100" value="@if(!old('title')){{$post->title}}@endif{{ old('title') }}" required />
 	</div>
 	<div class="form-group">
-		<textarea name="content" class="form-control textarea">@if(!old('content')){!! $post->content !!}@endif{!! old('content') !!}</textarea>
+		<textarea name="content" rows="8" class="form-control textarea">@if(!old('content')){!! $post->content !!}@endif{!! old('content') !!}</textarea>
 	</div>
-	<div class="pull-left">
-		@if ($post->active == '1')
-			<input type="submit" name='publish' class="btn btn-success" value="Update" />
-		@else
-			<input type="submit" name='publish' class="btn btn-success" value="Publish"/>
-		@endif
-		<input type="submit" name='save' class="btn btn-default" value="Save as draft" />
-	</div>
-	<div class="pull-right">
-		<a href="{{ url('/lavorum/post/delete/'.$post->id.'?_token='.csrf_token()) }}" class="btn btn-danger">Delete</a>
+	<div class="clearfix">
+		<div class="pull-left">
+			@if ($post->active == '1')
+				<input type="submit" name='publish' class="btn btn-success" value="Update" />
+			@else
+				<input type="submit" name='publish' class="btn btn-success" value="Publish"/>
+			@endif
+			<input type="submit" name='save' class="btn btn-default" value="Save as draft" />
+		</div>
+		<div class="pull-right">
+			<a href="{{ url('/lavorum/post/delete/'.$post->id.'?_token='.csrf_token()) }}" class="btn btn-danger">Delete</a>
+		</div>
 	</div>
 </form>
 @endsection

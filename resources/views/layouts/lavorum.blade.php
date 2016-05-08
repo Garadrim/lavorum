@@ -15,7 +15,7 @@
 	</head>
 	<body id="lavorum">
 
-		<nav class="navbar navbar-inverse navbar-fixed-top" id="header">
+		<nav class="navbar navbar-default navbar-fixed-top" id="header">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -27,7 +27,7 @@
 					<a class="navbar-brand" href="{{ url('/lavorum') }}">Lavorum</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					@yield('navbar-extra')
+					@yield('navbar-left')
 					<ul class="nav navbar-nav navbar-right">
 						@if (Auth::guest())
 							<li>
@@ -45,14 +45,14 @@
 											<a href="{{ url('/lavorum/post/create') }}">Create a post</a>
 										</li>
 										<li>
-											<a href="{{ url('/lavorum/user/'.Auth::id().'/posts') }}">My posts</a>
+											<a href="{{ url('/lavorum/user/'.Auth::user()->username.'/posts') }}">My posts</a>
 										</li>
 									@endif
 									<li>
-										<a href="{{ url('/lavorum/user/'.Auth::id()) }}">My profile</a>
+										<a href="{{ url('/lavorum/user/'.Auth::user()->username) }}">My profile</a>
 									</li>
 									<li>
-										<a href="{{ url('/logout') }}">Logout</a>
+										<a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
 									</li>
 								</ul>
 							</li>
@@ -95,11 +95,9 @@
 				</div>
 
 				<div class="container">
-
 					<div>
 						@yield('content')
 					</div>
-
 				</div>
 
 			</div>
@@ -109,7 +107,10 @@
 		<footer class="footer" id="footer">
 			<div class="jumbotron">
 				<div class="container-fluid">
-					<div id="footer_me"></div>
+					<div class="footer_main">
+						<a href="https://github.com/Garadrim/lavorum"><i class="fa fa-github fa-2x"></i></a>
+						<span id="footer_me"></span>
+					</div>
 					<div id="footer_year"></div>
 				</div>
 			</div>
